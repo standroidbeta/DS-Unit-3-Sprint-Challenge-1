@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-ACME Company Product Tracking - This a us useful tool to keep track of
+ACME Company Product Tracking - Useful tools to keep track of
 ACME company products.
 """
 

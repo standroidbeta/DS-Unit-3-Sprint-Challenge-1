@@ -1,1 +1,1 @@
-product_names = ["A Cool Toy", "Anvil", "TNT"]
+product_names = ["A Cool Toy", "Paint", "Anvil", "TNT"]

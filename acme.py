@@ -2,7 +2,7 @@ from names import product_names
 import random
 
 
-class Procuct:
+class Product:
     """Class to Load CSV Dataset into a DataFrame"""
 
     def __init__(self, names=None, price=10, weight=20, flammability=0.1, identifier=1):

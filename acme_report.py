@@ -5,26 +5,45 @@ from typing import List, Any, Union
 
 from acme import Product
 
-# Useful to use with random.sample to generate names
 ADJECTIVES = ['Awesome', 'Shiny', 'Impressive', 'Portable', 'Improved']
 NOUNS = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
 
 
-def generate_products(num_product=30):
-    """Randomly generates product list"""
-    products = [' '.join(sample(ADJECTIVES, 1) + sample(NOUNS, 1))
-                for _ in range(num_product)]
-    products_set = set(products)
-    products = len(products_set)
+class Report(Product):
 
-    return print('Unique number of products:', products)
+    def __init__(self, num_product=None, products=None, products_set=None):
+        super().__init__()
 
+        self.num_product = num_product
+        self.products = products
+        self.products_set = products_set
 
-def inventory_report(products):
+    def generate_products(self, num_product=30):
+        """Randomly generates total number of unique products"""
+        self.products = [' '.join(sample(ADJECTIVES, 1) + sample(NOUNS, 1))
+                         for _ in range(num_product)]
+        self.products_set = set(self.products)
+        self.products = len(self.products_set)
 
+        print("Unique product names:", self.products)
+
+        return
+
+    def inventory_report(self, products):
+
+        avg_price = self.price / products
+        print('Average price:', avg_price)
+
+        avg_weight = self.weight / products
+        print('Average weight:', avg_weight)
+
+        avg_flammability = self.flammability / products
+        print('Average flammability:', avg_flammability)
+
+        return
     pass
 
+    if __name__ == "__main__":
+        inventory_report(generate_products())
 
-if __name__ == '__main__':
-    inventory_report(generate_products())
 
